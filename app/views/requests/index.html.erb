@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+<body>
+<div class="container">
+<h3>申請一覧</h3>
+
+<!--<p>Find me in app/views/requests/index.html.erb</p> -->
+<p><%= notice %></p>
+
+<table>
+  <tr>
+    <th>申請日</th>
+    <th>申請者</th>
+    <th>ＭＬ名</th>
+    <th>情報管理責任者</th>
+    <th>ＭＬ管理責任者</th>
+    <th>ステータス</th>
+  </tr>
+
+<% @requests.each do |request| %>
+  <tr>
+    <td><%= request.date %></td>
+    <td><%= request.name %></td>
+    <td><%= request.mailing %></td>
+    <td><%= request.manager %></td>
+    <td><%= request.chief %></td>
+    <td><%= request.status %></td>
+    <td class="label label-info"><%= link_to '詳細', request_path(request.id) %></td>
+    <td class="label label-warning"><%= link_to '編集', edit_request_path(request.id),data: { confirm: '編集しますか？' }  %></td>
+    <td class="label label-danger"><%= link_to '削除', request_path(request.id),method: :delete,data: { confirm: '削除してもよろしいですか？' }  %></td>
+  </tr>
+<% end %>
+
+</table>
+</div>
+</body>
+</html>

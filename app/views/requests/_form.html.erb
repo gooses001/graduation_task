@@ -1,0 +1,101 @@
+<div class="container">
+<%= form_with(model: @request, local:true)do|form| %>
+
+  <% if @request.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @request.errors.count %>件のエラーがあります。</h2>
+      <ul>
+        <% @request.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+  <div class="request_content">
+    <%= form.label :date %>
+    <%= form.text_field :date %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  
+  <div class="request_content">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+  
+  <div class="request_content">
+    <%= form.label :department %>
+    <%= form.text_field :department %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :phone %>
+    <%= form.text_field :phone %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :manager %>
+    <%= form.text_field :manager %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :chief %>
+    <%= form.text_field :chief %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :mailing %>
+    <%= form.text_field :mailing %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :purpose %>
+    <%= form.text_field :purpose %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :reason %>
+    <%= form.text_field :reason %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :range %>
+    <%= form.text_field :range %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :user %>
+    <%= form.text_field :user %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :managecheck %>
+    <%= form.text_field :managecheck %>
+  </div>
+
+  <div class="request_content">
+    <%= form.label :chiefcheck %>
+    <%= form.text_field :chiefcheck %>
+  </div>
+
+  <br>
+  
+  <%= form.submit %>
+
+<% end %>
+</div>
