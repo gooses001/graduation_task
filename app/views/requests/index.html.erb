@@ -12,11 +12,13 @@
 <table>
   <tr>
     <th>申請日</th>
-    <th>申請者</th>
-    <th>ＭＬ名</th>
-    <th>情報管理責任者</th>
-    <th>ＭＬ管理責任者</th>
-    <th>ステータス</th>
+    <th>申請者　　</th>
+    <th>ＭＬ名　　</th>
+    <th>情報管理責任者　　</th>
+    <th>情報管理責任者承認　　</th>
+    <th>ＭＬ管理責任者　　</th>
+    <th>ＭＬ管理責任者承認　　</th>
+    <th>ステータス　　</th>
   </tr>
 
 <% @requests.each do |request| %>
@@ -25,7 +27,9 @@
     <td><%= request.name %></td>
     <td><%= request.mailing %></td>
     <td><%= request.manager %></td>
+    <td><%= request.managecheck %></td>
     <td><%= request.chief %></td>
+    <td><%= request.chiefcheck %></td>
     <td><%= request.status %></td>
     <td class="label label-info"><%= link_to '詳細', request_path(request.id) %></td>
     <td class="label label-warning"><%= link_to '編集', edit_request_path(request.id),data: { confirm: '編集しますか？' }  %></td>

@@ -10,16 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180917055602) do
+ActiveRecord::Schema.define(version: 20180921114338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "entries", force: :cascade do |t|
+    t.integer "request_id", null: false
+    t.string "entry_user", null: false
+    t.string "entry_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "requests", force: :cascade do |t|
     t.string "index"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.date "date"
+    t.string "date", default: "yyyy-mm-dd", null: false
     t.text "name"
     t.string "email"
     t.text "department"
@@ -31,10 +39,26 @@ ActiveRecord::Schema.define(version: 20180917055602) do
     t.text "reason"
     t.boolean "range"
     t.boolean "content"
-    t.string "user"
     t.boolean "status"
     t.boolean "managecheck"
     t.boolean "chiefcheck"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string "email", default: "", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.text "department", default: "", null: false
+    t.string "phone", default: "05011111111"
+    t.boolean "status", default: false, null: false
+    t.string "roll", default: "normal", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.text "name", default: "あなたの名前", null: false
+    t.index ["email"], name: "index_users_on_email", unique: true
+    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
 end

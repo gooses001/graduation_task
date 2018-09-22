@@ -1,0 +1,45 @@
+ja:
+  activerecord:
+    models:
+      blog: "ブログ"
+      user: "ユーザー"
+    attributes:
+      request:
+        date: "申請日"
+        name: "申請者名"
+        email: "申請者メールアドレス"
+        phone: "電話番号"
+        department: "部署"
+        manager: "情報管理責任者名"
+        chief: "ML管理責任者名"
+        mailing: "メーリングリスト"
+        purpose: "ML利用目的"
+        reason: "申請理由入力"
+        range: "利用範囲"
+        content: "申請内容"
+        user: "申請アドレス"
+        status: "処理ステータス"
+        managecheck: "情報管理者承認"
+        chiefcheck: "ML管理責任者承認"
+        Create Request: "作成"
+        Update Request: "完了"
+        Entries_entry_name: "利用者名"
+        Entries_entry_user: "利用者メールアドレス"
+      contact:
+        name: "名前"
+        email: "メールアドレス"
+        content: "内容"
+      user:
+        title: "タイトル"
+        name: "名前"
+        email: "メールアドレス"
+        content: "内容"
+        current_password: "現在のパスワード"
+        password: "パスワード"
+        password_confirmation: "確認用パスワード"
+        remember_me: "ログイン情報を記憶"
+        department: "部署"
+        phone: "電話番号"
+      entries:
+        entry_name: "利用者名"
+        entry_user: "利用者メールアドレス"

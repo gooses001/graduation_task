@@ -1,13 +1,19 @@
 class RequestsController < ApplicationController
-  before_action :set_request, only: [:show, :edit, :update, :destroy]
+#before_action :authenticate_user!, only: [:new, :create]
+
+before_action :set_request, only: [:show, :edit, :update, :destroy]
+before_action :authenticate_user!
 
   def index
-    @requests =Request.all
+#    @requests =Request.all
+    @requests =Request.order :status
   end
 
 
   def new
     @request = Request.new
+    @request.entries.build
+#    2.times { @request.entries.build }
   end
 
 
@@ -23,6 +29,8 @@ class RequestsController < ApplicationController
 
   def show
     @request = Request.find(params[:id])
+    @entry = Entry.find(params[:id])
+#    @entry = Entry.find(params[:request_id])
   end
 
   def edit
@@ -48,7 +56,8 @@ class RequestsController < ApplicationController
 
 
   def request_params
-    params.require(:request).permit(:date,
+    params.require(:request).permit(
+    :date,
     :name,
     :email,
     :department,
@@ -63,7 +72,9 @@ class RequestsController < ApplicationController
     :user,
     :status,
     :managecheck,
-    :chiefcheck)
+    :chiefcheck,
+    entries_attributes:[:id,:entry_user,:entry_name]
+    )
   end
 
   def set_request

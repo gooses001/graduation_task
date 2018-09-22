@@ -1,3 +1,4 @@
+<div class="container">
 <h3>申請内容詳細</h3>
 
 
@@ -14,7 +15,8 @@
 <p>申請理由入力：<%= @request.reason %></p>
 <p>利用範囲：<%= @request.range %></p>
 <p>申請内容：<%= @request.content %></p>
-<p>利用者：<%= @request.user %></p>
+<p>利用者：<%= @entry.entry_name %></p>
+<p>利用者メールアドレス：<%= @entry.entry_user %></p>
 <p>処理ステータス：<%= @request.status %></p>
 <p>情報管理者承認：<%= @request.managecheck %></p>
 <p>ML管理責任者承認：<%= @request.chiefcheck %></p>
@@ -29,3 +31,4 @@
 
 <%#= link_to 'Edit', edit_request_path(@request) %> 
 
+</div>
