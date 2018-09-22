@@ -15,12 +15,19 @@
 <p>申請理由入力：<%= @request.reason %></p>
 <p>利用範囲：<%= @request.range %></p>
 <p>申請内容：<%= @request.content %></p>
+
 <p>利用者：<%= @entry.entry_name %></p>
 <p>利用者メールアドレス：<%= @entry.entry_user %></p>
+
+<% @entries.each do |@entry| %>
+  <p>利用者：<%= @entry.entry_name %></p>
+  <p>利用者メールアドレス：<%= @entry.entry_user %></p>
+<% end %>
+
+
 <p>処理ステータス：<%= @request.status %></p>
 <p>情報管理者承認：<%= @request.managecheck %></p>
 <p>ML管理責任者承認：<%= @request.chiefcheck %></p>
-
 
 <!--
 <p>
