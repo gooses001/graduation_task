@@ -20,9 +20,7 @@ before_action :authenticate_user!
 
   def create
     @request = Request.new(request_params)
-#    binding.pry
 
-#    @entry.request_id = Request.find(params[:id]) 
       if@request.save
         redirect_to requests_path, notice:"申請書を作成しました"
       else

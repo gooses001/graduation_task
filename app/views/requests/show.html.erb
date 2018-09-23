@@ -15,13 +15,18 @@
 <p>申請内容：<%= @request.content %></p>
 
 <% @request.entries.each do |entry_users| %>
-  binding.pry
+  <br>
   <p>利用者：<%= entry_users.entry_name %></p>
   <p>利用者メールアドレス：<%= entry_users.entry_user %></p>
 <% end %>
 
-<p>処理ステータス：<%= @request.status %></p>
+<br>
+
 <p>情報管理者承認：<%= @request.managecheck %></p>
 <p>ML管理責任者承認：<%= @request.chiefcheck %></p>
+
+<br>
+
+<p>処理ステータス：<%= @request.status %></p>
 
 </div>
