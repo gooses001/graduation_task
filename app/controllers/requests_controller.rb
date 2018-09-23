@@ -6,6 +6,7 @@ before_action :authenticate_user!
 
   def index
 #    @requests =Request.all
+#    @requests =Request.all,includes(:entry_name,:entry_user)
     @requests =Request.order :status
   end
 
@@ -33,7 +34,9 @@ before_action :authenticate_user!
   def show
     @request = Request.find(params[:id])
     @entry = Entry.find(params[:id])
-#    @entry = Entry.find(params[:request_id])
+#    @entry = Entry.find(params[:id])
+#    @entries = request.entries.find(params[:id])
+#    @entries = Entry.find(params[:id])
   end
 
   def edit

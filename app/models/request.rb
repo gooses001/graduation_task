@@ -15,6 +15,7 @@ class Request < ApplicationRecord
 #  validates :status, length: { in: 1..255 }
 
   has_many :entries,dependent: :destroy
+  has_many :entry_users, source: :request_id
   accepts_nested_attributes_for :entries,allow_destroy: true
 #  belongs_to :entry
 end

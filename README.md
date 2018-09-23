@@ -1,24 +1,38 @@
 # README
+製品名：メーリングリスト利用申請（追加・削除）							
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+【製品概要】
+■目的
+  ・現在紙媒体によるメーリングリスト（ML）の申請をアプリ化することでペーパーレス
+  　を実現する。						
+  ・MLの利用者申請～システム登録実施管理をスムーズに行うこと。
 
-Things you may want to cover:
+■機能概要
+  ・MLへのユーザアカウント申請がwebAP上で可能です。
+  ・申請がどこまで承認され登録作業が完了しているのかが把握できます。
+  ・C&Cすることで誤記、誤設定が防ぐことができます。
+  ・アカウントの権限により、一般ユーザでは申請のみ、管理者にはステータス変更まで
+    可能となっています。
 
-* Ruby version
+■更新履歴
+2018/09/22  卒業課題提出用としてアップ
+            ・アカウント作成、ログイン機能
+            ・一覧機能
+            ・申請機能
+            ・申請内容編集機能
+            ・申請削除機能
+            ・権限変更機能（アカウント編集機能への追加）
 
-* System dependencies
 
-* Configuration
+【あとがき】
+まずはご教授いただきましたメンターの皆さんに大変感謝しております。
+何度も同じ質問を（違う角度で）繰り返し、自分の理解不足（知識不足）がよくわかりま
+した。
 
-* Database creation
+gemは使い方がわかるととても便利でした。
+  #管理者権限の設定変更など裏で悩んだのがうそのようです。
 
-* Database initialization
+親テーブルと子テーブルの連携には悩まされましたが、自分が動きをわかっていなかった
+部分が多分にありました。
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+コンソール（pry-rails）は使い方がわかると非常に便利でした！

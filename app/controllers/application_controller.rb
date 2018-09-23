@@ -9,6 +9,8 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:phone])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:status])
     devise_parameter_sanitizer.permit(:sign_up, keys: [:roll])
+    
+    devise_parameter_sanitizer.permit(:account_update, keys: [:roll])
   end
 #  protect_from_forgery with: :exception
 end
