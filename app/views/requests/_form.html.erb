@@ -47,40 +47,51 @@
   </div>
 
 <br />
+<br />
 
   <div class="request_content">
+    <p>情報管理責任者名を入力してください。</p>
     <%= form.label :manager %>
     <%= form.text_field :manager ,size: "30"%>
   </div>
 
 <br />
+<br />
 
   <div class="request_content">
+    <p>ML管理責任者名を入力してください。</p>
     <%= form.label :chief %>
     <%= form.text_field :chief ,size: "30"%>
   </div>
 
 <br />
+<br />
 
   <div class="request_content">
+    <p>申請対象のML（アドレス）を入力してください。</p>
     <%= form.label :mailing %>
     <%= form.email_field :mailing ,size: "30"%>
   </div>
 
 <br />
+<br />
 
   <div class="request_content">
+    <p>MLの利用目的を入力してください。</p>
     <%= form.label :purpose %>
     <%= form.text_area :purpose ,size: "30x5"%>
   </div>
 
 <br />
+<br />
 
   <div class="request_content">
+    <p>申請目的を入力してください。</p>
     <%= form.label :reason %>
     <%= form.text_area :reason ,size: "30x5"%>
   </div>
 
+<br />
 <br />
 
   <div class="request_content">
@@ -89,13 +100,16 @@
   </div>
 
   <div class="request_content">
+    <p>MLへの追加or削除を選択してください。</p>
     <%= form.label :content %>
     <%= form.select :content ,["追加","削除"], :prompt => "＝＝　選択してください　＝＝" %>
   </div>
   
 <br />
+<br />
 
   <div class="request_content">
+    <p>MLへ登録する利用者名、アドレスを入力してください。</p>
     <%= form.fields_for :entries do |entries_form| %>
 
       <%= entries_form.label :entry_name,"利用者名" %>
@@ -113,6 +127,7 @@
 
 <br />
   <% if current_user.roll == "manage" %>
+  <p>管理者の方：申請内容をご確認いただき、よろしければ『承認』を選択ください。</p>
   <div class="request_content">
     <%= form.label :managecheck %>
     <%#= form.select :managecheck ,["未承認",current_user.name]%> <!--要検討-->
@@ -124,7 +139,7 @@
   </div>
 
 <br />
-
+<br />
   <div class="request_content">
     <%= form.label :chiefcheck %>
     <%#= form.select :chiefcheck ,["未承認",current_user.name]%><!--要検討-->
@@ -132,7 +147,9 @@
   </div>
 
 <br />
+<br />
 
+  <p>※処理ステータスはシステム担当者のみ操作します。</p>
   <div class="request_content">
     <%= form.label :status %>
     <%= form.select :status ,["未完了","完了"]%>
