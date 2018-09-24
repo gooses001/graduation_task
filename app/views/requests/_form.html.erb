@@ -114,22 +114,28 @@
 <br />
   <% if current_user.roll == "manage" %>
   <div class="request_content">
-    <%= form.check_box :managecheck %>
     <%= form.label :managecheck %>
+    <%#= form.select :managecheck ,["未承認",current_user.name]%> <!--要検討-->
+    <%= form.select :managecheck ,["未承認","承認"]%> <!--βバージョン-->
+
+    <%#= form.check_box :managecheck %> <!--提出バージョン-->
+    <%#= form.label :managecheck %> <!--提出バージョン-->
+
   </div>
 
 <br />
 
   <div class="request_content">
-    <%= form.check_box :chiefcheck %>
     <%= form.label :chiefcheck %>
+    <%#= form.select :chiefcheck ,["未承認",current_user.name]%><!--要検討-->
+    <%= form.select :chiefcheck ,["未承認","承認"]%> <!--βバージョン-->
   </div>
 
 <br />
 
   <div class="request_content">
-    <%= form.check_box :status %>
     <%= form.label :status %>
+    <%= form.select :status ,["未完了","完了"]%>
   </div>
   
   <% else %>
