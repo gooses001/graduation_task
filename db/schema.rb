@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180924103018) do
+ActiveRecord::Schema.define(version: 20180925120958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +35,8 @@ ActiveRecord::Schema.define(version: 20180924103018) do
     t.text "manager"
     t.text "chief"
     t.string "mailing"
-    t.text "purpose"
-    t.text "reason"
+    t.text "purpose", null: false
+    t.text "reason", null: false
     t.boolean "range"
     t.string "content"
     t.string "status"
