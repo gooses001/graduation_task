@@ -35,7 +35,8 @@ tr {
 footer {
   width: 94%;
   height: 60px;
-  background-image: url("site_footer_image.png");
+//background-image: url("site_footer_image.png");//
+  background-image: image-url("site_footer_image.png");//Rails4以降の記述//
   padding: 5px 5px 5px 0;
   color: white;
   margin: 0 auto;
