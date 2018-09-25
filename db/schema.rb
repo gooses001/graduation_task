@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180925120958) do
+ActiveRecord::Schema.define(version: 20180925122711) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,13 +35,13 @@ ActiveRecord::Schema.define(version: 20180925120958) do
     t.text "manager"
     t.text "chief"
     t.string "mailing"
-    t.text "purpose", null: false
-    t.text "reason", null: false
+    t.text "purpose", default: "未承認", null: false
+    t.text "reason", default: "未承認", null: false
     t.boolean "range"
     t.string "content"
     t.string "status"
-    t.string "managecheck"
-    t.string "chiefcheck"
+    t.string "managecheck", default: "未承認", null: false
+    t.string "chiefcheck", default: "未承認", null: false
   end
 
   create_table "users", force: :cascade do |t|
